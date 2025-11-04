@@ -6,13 +6,13 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/04 17:45:00 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/05 00:09:28 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -Wno-cast-function-type -g
 
 MLX_DIR		= minilibx-linux
 LIBFT_DIR	= libft

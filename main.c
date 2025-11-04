@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/04 23:57:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 00:07:46 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	start_game(t_game *game)
 		free(game->mlx);
 		return (1);
 	}
-	mlx_hook(game->win, 2, 1L << 0, handle_key, game);
-	mlx_hook(game->win, 17, 0, quit, game);
+	mlx_hook(game->win, 2, 1L << 0, (int (*)())handle_key, game);
+	mlx_hook(game->win, 17, 0, (int (*)())quit, game);
 	mlx_loop(game->mlx);
 	return (0);
 }
