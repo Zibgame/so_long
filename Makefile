@@ -35,7 +35,7 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 
 SRC			= main.c
 
-OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
+OBJ			= $(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME)
 
