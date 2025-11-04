@@ -6,15 +6,17 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/04 23:33:45 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/04 23:57:38 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "so_long.h"
 
-int	quit(t_game *game)
+int	quit(void *param)
 {
+
+	t_game *game = (t_game *)param;
 	if (game->win)
 		mlx_destroy_window(game->mlx, game->win);
 	if (game->mlx)
@@ -26,8 +28,9 @@ int	quit(t_game *game)
 	return (0);
 }
 
-int	handle_key(int keycode, t_game *game)
+int	handle_key(int keycode, void *param)
 {
+	t_game *game = (t_game *)param;
 	if (keycode == KEY_ESC)
 		quit(game);
 	return (0);
@@ -54,6 +57,8 @@ int	main(int argc,char **argv)
 {
 	t_game	game;
 
+	(void)argc;
+	(void)argv;
 	ft_bzero(&game, sizeof(t_game));
 	start_game(&game);
 	return (0);

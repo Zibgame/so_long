@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/04 16:56:14 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/04 23:58:36 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+#	include <errno.h>
 # include "libft/libft.h"
 # include "mlx.h"
 
@@ -31,13 +32,15 @@ typedef struct s_game
 	void	*win; 
 }	t_game;
 
-int	quit(t_game *game);
+int	quit(void *param);
 
-int handle_key(int keycode, t_game *game);
+int handle_key(int keycode, void *param);
+
+int	check_arg(int argc, char *argv[]);
 
 int start_game(t_game *game);
 
-int		main(void);
+int	main(int argc, char **argv);
 
 #endif
 

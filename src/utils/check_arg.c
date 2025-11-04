@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 12:41:06 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/10/19 01:34:38 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/04 23:41:28 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/04 23:47:49 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "so_long.h"
+
+int check_arg(int argc, char *argv[])
 {
-	int	is_digit;
-
-	is_digit = 1;
-	if (!(c >= '0' && c <= '9'))
-		return (0);
-	return (is_digit);
+	if (argc >= 1)
+	{
+		perror("to much arguments");
+		return(1);
+	}
+	perror("Check Arg Good");
+	return(0);
 }
-
-// int main(void)
-// {
-//     printf("%d\n", ft_isdigit('3'));
-//     printf("%d\n", ft_isdigit('a'));
-//     return (0);
-// }
