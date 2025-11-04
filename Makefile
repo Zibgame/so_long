@@ -10,12 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
-#                                   SETTINGS                                   #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
+#    Updated: 2025/11/04 17:45:00 by zcadinot         ###   ########.fr        #
+#                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
-CC		= cc
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
+
 MLX_DIR		= minilibx-linux
 LIBFT_DIR	= libft
 SRC_DIR		= src
@@ -24,9 +33,10 @@ OBJ_DIR		= obj
 MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11
 LIBFT		= $(LIBFT_DIR)/libft.a
 
-SRC			= main.c \
+SRC			= main.c
 
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
+
 all: $(LIBFT) $(NAME)
 
 $(OBJ_DIR)/%.o: %.c
