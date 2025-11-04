@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/04 17:04:42 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/04 23:33:45 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	start_game(t_game *game)
 	return (0);
 }
 
-int	main(void)
+int	main(int argc,char **argv)
 {
 	t_game	game;
 
