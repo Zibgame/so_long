@@ -9,31 +9,47 @@
 #    Updated: 2025/11/04 15:57:51 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+# **************************************************************************** #
+#                                   SETTINGS                                   #
+# **************************************************************************** #
 
-NAME = so_long
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iminilibx-linux
-MLX_DIR = minilibx-linux
-MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
+NAME		= so_long
+CC		= cc
+CFLAGS		= -Wall -Wextra -Werror -g
+MLX_DIR		= minilibx-linux
+LIBFT_DIR	= libft
+SRC_DIR		= src
+OBJ_DIR		= obj
 
-SRC = main.c
-OBJ = $(SRC:.c=.o)
+MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11
+LIBFT		= $(LIBFT_DIR)/libft.a
 
-all: $(MLX_DIR)/libmlx.a $(NAME)
+SRC			= main.c \
 
-$(MLX_DIR)/libmlx.a:
-	@$(MAKE) -C $(MLX_DIR)
+OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
+all: $(LIBFT) $(NAME)
+
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -I. -I$(LIBFT_DIR) -I$(MLX_DIR) -c $< -o $@
+	@echo "Compiled: $<"
+
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(MLX_FLAGS) -o $(NAME)
-	@echo "\033[32m✅ Compilation réussie ! Lance ./$(NAME)\033[0m"
+	@$(CC) $(OBJ) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
+	@echo "✅ $(NAME) ready!"
 
 clean:
-	rm -f $(OBJ)
-	@$(MAKE) -C $(MLX_DIR) clean
+	@$(MAKE) -C $(LIBFT_DIR) clean
+	@rm -rf $(OBJ_DIR)
+	@echo "🧹 Objects cleaned"
 
 fclean: clean
-	rm -f $(NAME)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
+	@rm -f $(NAME)
+	@echo "🧽 Full clean"
 
 re: fclean all
 

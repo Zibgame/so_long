@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include "libft/libft.h"
 # include "mlx.h"
 
 # define KEY_ESC 65307
