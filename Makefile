@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/05 00:09:28 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/05 00:16:27 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ LIBFT_DIR	= libft
 MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11
 LIBFT		= $(LIBFT_DIR)/libft.a
 
-SRC			= main.c
+SRC = \
+	main.c \
+	src/utils/check_arg.c
+
 OBJ			= $(SRC:.c=.o)
 
 

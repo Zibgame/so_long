@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 00:07:46 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 00:28:30 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int	main(int argc,char **argv)
 {
 	t_game	game;
 
-	(void)argc;
-	(void)argv;
+	if (check_arg(argc, argv))
+		return (1);
 	ft_bzero(&game, sizeof(t_game));
 	start_game(&game);
 	return (0);
