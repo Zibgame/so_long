@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 14:31:30 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 14:33:53 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	start_game(t_game *game)
 		return (1);
 	mlx_key_hook(game->mlx, handle_key, game);
 	mlx_close_hook(game->mlx, quit, game);
-	display_tile(game, 500, 100);
+	display_tile(game,"assets/textures/Grass/Grass_23-128x128.png", 500, 100);
 	mlx_loop(game->mlx);
 	mlx_terminate(game->mlx);
 	return (0);
 }
 
-void display_tile(t_game *game, int x, int y)
+void display_tile(t_game *game,char *path, int x, int y)
 {
 	mlx_texture_t	*tex;
 	mlx_image_t *img;
