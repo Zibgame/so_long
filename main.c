@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 14:33:53 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:01:27 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,34 +39,10 @@ int	start_game(t_game *game)
 	mlx_key_hook(game->mlx, handle_key, game);
 	mlx_close_hook(game->mlx, quit, game);
 	display_tile(game,"assets/textures/Grass/Grass_23-128x128.png", 500, 100);
+	display_tile(game,"/home/zcadinot/Documents/so_long/assets/textures/Roofs/Roofs_19-128x128.png", 400, 100);
 	mlx_loop(game->mlx);
 	mlx_terminate(game->mlx);
 	return (0);
-}
-
-void display_tile(t_game *game,char *path, int x, int y)
-{
-	mlx_texture_t	*tex;
-	mlx_image_t *img;
-
-	tex = mlx_load_png("assets/textures/Tile/Tile_13-128x128.png");
-	if (!tex)
-	{
-		perror("error chargement image");
-		return ;
-	}
-	img = mlx_texture_to_image(game->mlx, tex);
-	if (!img)
-	{
-		perror("error de convertion image to texture");
-		return ;
-	}
-	if (mlx_image_to_window(game->mlx, img, x, y) < 0)
-	{
-		perror("error affichage image");
-		return ;
-	}
-	mlx_delete_texture(tex);
 }
 
 int	main(int argc, char **argv)
