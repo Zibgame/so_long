@@ -15,9 +15,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-#	include <errno.h>
-# include "libft/libft.h"
-# include "mlx.h"
+# include <errno.h>
+# include <fcntl.h>
+# include "library/libft/libft.h"
+# include "library/get_next_line/get_next_line.h"
+# include "library/ft_printf/ft_printf.h"
+# include "library/minilibx-linux/mlx.h"
 
 # define KEY_ESC 65307
 # define GAME_NAME "So Long"

@@ -9,47 +9,81 @@
 #    Updated: 2025/11/05 00:16:27 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+# **************************************************************************** #
+#                                   VARIABLES                                  #
+# **************************************************************************** #
 
 NAME		= so_long
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -Wno-cast-function-type -g
+CC			= clang
+CFLAGS		= -Wall -Wextra -Werror -I. -I./library/libft -I./library/get_next_line -I./library/ft_printf -I./library/minilibx-linux
+RM			= rm -f
 
-MLX_DIR		= minilibx-linux
-LIBFT_DIR	= libft
+LIBFT_DIR	= library/libft
+PRINTF_DIR	= library/ft_printf
+GNL_DIR		= library/get_next_line
+MLX_DIR		= library/minilibx-linux
 
-MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11
 LIBFT		= $(LIBFT_DIR)/libft.a
+PRINTF		= $(PRINTF_DIR)/libftprintf.a
+MLX			= $(MLX_DIR)/libmlx.a
 
-SRC = \
-	main.c \
-	src/utils/check_arg.c
+SRC_DIR		= src
+OBJ_DIR		= obj
 
-OBJ			= $(SRC:.c=.o)
+SRC			= main.c \
+			  src/parsing/check_arg.c \
+			  src/parsing/get_map.c \
+			  src/utils/blank.c
 
+OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
-all: $(LIBFT) $(NAME)
+# **************************************************************************** #
+#                                   COMMANDS                                   #
+# **************************************************************************** #
+
+$(NAME): $(LIBFT) $(PRINTF) $(MLX) $(OBJ)
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(PRINTF) $(MLX) -lX11 -lXext -lm -o $(NAME)
+	@echo "\033[32m✅ Compilation réussie : $(NAME)\033[0m"
+
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "\033[90mCompilé : $<\033[0m"
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+# **************************************************************************** #
+#                                   LIBRARIES                                  #
+# **************************************************************************** #
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJ)
-	@$(CC) $(OBJ) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
-	@echo "✅ $(NAME) ready!"
+$(PRINTF):
+	@$(MAKE) -C $(PRINTF_DIR)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -I$(MLX_DIR) -I$(LIBFT_DIR) -I. -c $< -o $@
-	@echo "Compiled: $<"
+$(MLX):
+	@$(MAKE) -C $(MLX_DIR)
+
+# **************************************************************************** #
+#                                   COMMANDS                                   #
+# **************************************************************************** #
 
 clean:
+	@$(RM) -r $(OBJ_DIR)
 	@$(MAKE) -C $(LIBFT_DIR) clean
-	@rm -f $(OBJ)
-	@echo "🧹 Objects cleaned"
+	@$(MAKE) -C $(PRINTF_DIR) clean
+	@$(MAKE) -C $(MLX_DIR) clean
+	@echo "\033[33m🧹 Dossier obj supprimé\033[0m"
 
 fclean: clean
-	@$(MAKE) -C $(LIBFT_DIR) fclean
-	@rm -f $(NAME)
-	@echo "🧽 Full clean"
+	@$(RM) $(NAME)
+	@$(MAKE) -C $(LIBFT_DIR) fclean || true
+	@$(MAKE) -C $(PRINTF_DIR) fclean || true
+	@echo "\033[31m🗑️  Tout supprimé\033[0m"
 
-re: fclean all
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re
+
