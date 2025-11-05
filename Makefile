@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/05 11:58:00 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/05 17:30:20 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -39,6 +39,7 @@ SRC			= main.c \
 			  src/parsing/check_arg.c \
 			  src/parsing/get_map.c \
 			  src/render/render_map.c \
+			  src/utils/map_size.c \
 			  src/render/display_tile.c
 
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)

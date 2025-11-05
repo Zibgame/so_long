@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 17:09:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:44:07 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,14 @@ int	start_game(t_game *game,char *map_path)
 {
 	char **map;
 
-	game->mlx = mlx_init(WIN_WIDTH, WIN_HEIGHT, GAME_NAME, false);
+	int *mapsize;
+
+	map = get_map(map_path);
+	mapsize = map_size(map);
+	game->mlx = mlx_init(mapsize[0] * TILE_SIZE, mapsize[1] * TILE_SIZE, GAME_NAME, false);
 	if (!game->mlx)
 		return (1);
 
-	map = get_map(map_path);
 	mlx_key_hook(game->mlx, handle_key, game);
 	mlx_close_hook(game->mlx, quit, game);
 	render_map(game,map);
@@ -55,6 +58,6 @@ int	main(int argc, char **argv)
 	if (check_arg(argc, argv))
 		return (1);
 	ft_bzero(&game, sizeof(t_game));
-	start_game(&game, "/home/zcadinot/Documents/so_long/assets/maps/subject_map.ber");
+	start_game(&game, argv[1]);
 	return (0);
 }

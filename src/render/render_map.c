@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 17:06:30 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:17:12 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int render_map(t_game *game, char *map[])
 {
 	int tile_x;
 	int tile_y;
-	
+
 	tile_y = 0;
 	while(map[tile_y])
 	{
