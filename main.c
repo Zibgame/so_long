@@ -6,54 +6,44 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 00:28:30 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 14:10:00 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
 #include "so_long.h"
 
-int	quit(void *param)
+void	quit(void *param)
 {
+	t_game	*game;
 
-	t_game *game = (t_game *)param;
-	if (game->win)
-		mlx_destroy_window(game->mlx, game->win);
+	game = (t_game *)param;
 	if (game->mlx)
-	{
-		mlx_destroy_display(game->mlx);
-		free(game->mlx);
-	}
+		mlx_terminate(game->mlx);
 	exit(0);
-	return (0);
 }
 
-int	handle_key(int keycode, void *param)
+void	handle_key(mlx_key_data_t keydata, void *param)
 {
-	t_game *game = (t_game *)param;
-	if (keycode == KEY_ESC)
+	t_game	*game;
+
+	game = (t_game *)param;
+	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
 		quit(game);
-	return (0);
 }
 
 int	start_game(t_game *game)
 {
-	game->mlx = mlx_init();
+	game->mlx = mlx_init(800, 600, GAME_NAME, false);
 	if (!game->mlx)
 		return (1);
-	game->win = mlx_new_window(game->mlx, 800, 600, GAME_NAME);
-	if (!game->win)
-	{
-		free(game->mlx);
-		return (1);
-	}
-	mlx_hook(game->win, 2, 1L << 0, (int (*)())handle_key, game);
-	mlx_hook(game->win, 17, 0, (int (*)())quit, game);
+	mlx_key_hook(game->mlx, handle_key, game);
+	mlx_close_hook(game->mlx, quit, game);
 	mlx_loop(game->mlx);
+	mlx_terminate(game->mlx);
 	return (0);
 }
 
-int	main(int argc,char **argv)
+int	main(int argc, char **argv)
 {
 	t_game	game;
 
@@ -63,4 +53,3 @@ int	main(int argc,char **argv)
 	start_game(&game);
 	return (0);
 }
-

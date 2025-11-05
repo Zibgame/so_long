@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 11:55:45 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 13:33:18 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -19,7 +19,7 @@
 # include <fcntl.h>
 # include "library/libft/libft.h"
 # include "library/get_next_line/get_next_line.h"
-# include "library/minilibx-linux/mlx.h"
+#include "MLX42/MLX42.h"
 
 # define KEY_ESC 65307
 # define GAME_NAME "So Long"
@@ -34,9 +34,9 @@ typedef struct s_game
 	void	*win; 
 }	t_game;
 
-int	quit(void *param);
+void	quit(void *param);
 
-int handle_key(int keycode, void *param);
+void	handle_key(mlx_key_data_t keydata, void *param);
 
 int	check_arg(int argc, char *argv[]);
 
