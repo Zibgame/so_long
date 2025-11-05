@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 16:54:22 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:10:24 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -22,12 +22,21 @@
 #include "MLX42/MLX42.h"
 
 # define GAME_NAME "So Long"
+
+# define TILE_SIZE 42
+
+# define MAP_WIDTH  16
+# define MAP_HEIGHT 16
+# define WIN_WIDTH  (MAP_WIDTH * TILE_SIZE)
+# define WIN_HEIGHT (MAP_HEIGHT * TILE_SIZE)
+
 # define GROUND "assets/textures/Grass/Grass_23-42x42.png" 
 # define WALL "assets/textures/Bricks/Bricks_16-42x42.png" 
 # define GLICHT "assets/textures/other/glicht.png" 
 # define COLLEC "assets/textures/food/Peach.png"
-# define EXIT "assets/textures/Tile/Tile_15-42x42.png"
-# define START "assets/textures/Tile/Tile_14-42x42.png"
+# define EXIT "assets/textures/other/END.png"
+# define START "assets/textures/other/spwan.png"
+
 # define KEY_ESC 65307
 # define KEY_W   119
 # define KEY_A   97

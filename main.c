@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 16:10:58 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 17:09:38 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	start_game(t_game *game,char *map_path)
 {
 	char **map;
 
-	game->mlx = mlx_init(800, 600, GAME_NAME, false);
+	game->mlx = mlx_init(WIN_WIDTH, WIN_HEIGHT, GAME_NAME, false);
 	if (!game->mlx)
 		return (1);
 
