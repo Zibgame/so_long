@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 16:32:51 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:40:09 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -25,6 +25,9 @@
 # define GROUND "assets/textures/Grass/Grass_23-42x42.png" 
 # define WALL "assets/textures/Bricks/Bricks_16-42x42.png" 
 # define GLICHT "assets/textures/other/glicht.png" 
+# define COLLEC "assets/textures/Tile/Tile_16-42x42.png"
+# define EXIT "assets/textures/Tile/Tile_15-42x42.png"
+# define START "assets/textures/Tile/Tile_14-42x42.png"
 # define KEY_ESC 65307
 # define KEY_W   119
 # define KEY_A   97
