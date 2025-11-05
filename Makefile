@@ -37,7 +37,9 @@ OBJ_DIR		= obj
 # Sources principales
 SRC			= main.c \
 			  src/parsing/check_arg.c \
-			  src/parsing/get_map.c
+			  src/parsing/get_map.c \
+			  src/render/render_map.c \
+			  src/render/display_tile.c
 
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
 

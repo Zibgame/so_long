@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 14:55:05 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:57:46 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -21,8 +21,9 @@
 # include "library/get_next_line/get_next_line.h"
 #include "MLX42/MLX42.h"
 
-# define KEY_ESC 65307
 # define GAME_NAME "So Long"
+# define GROUND "assets/textures/Grass/Grass_23-42x42.png" 
+# define KEY_ESC 65307
 # define KEY_W   119
 # define KEY_A   97
 # define KEY_S   115
@@ -39,6 +40,8 @@ void	quit(void *param);
 void	handle_key(mlx_key_data_t keydata, void *param);
 
 mlx_image_t *display_tile(t_game *game,char *path, int x, int y);
+
+int render_map(t_game *game, char *map[]);
 
 int	check_arg(int argc, char *argv[]);
 

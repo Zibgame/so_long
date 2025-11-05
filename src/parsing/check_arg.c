@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 23:41:28 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 00:31:45 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:03:11 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int check_arg(int argc, char *argv[])
 
 	if (argc > 2 || argc < 2)
 	{
-		perror("Numbers of Argument incorect");
+		perror("\n ERROR: Numbers of Argument incorect \n \n");
 		return(1);
 	}
 	else
@@ -35,6 +35,6 @@ int check_arg(int argc, char *argv[])
 		}
 		close(fd);
 	}
-	perror("Check Arg Good");
+	perror("\n SUCCES : Number of argument good \n \n");
 	return(0);
 }
