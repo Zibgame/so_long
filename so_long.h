@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 13:33:18 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 14:31:11 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -37,6 +37,8 @@ typedef struct s_game
 void	quit(void *param);
 
 void	handle_key(mlx_key_data_t keydata, void *param);
+
+void display_tile(t_game *game, int x, int y);
 
 int	check_arg(int argc, char *argv[]);
 
