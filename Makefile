@@ -40,6 +40,7 @@ SRC			= main.c \
 			  src/parsing/get_map.c \
 			  src/render/render_map.c \
 			  src/utils/map_size.c \
+			  src/player/find_player.c \
 			  src/render/display_tile.c
 
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)

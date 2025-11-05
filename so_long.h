@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 17:26:54 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:02:35 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -49,6 +49,12 @@ typedef struct s_game
 	void	*win; 
 }	t_game;
 
+typedef struct s_player
+{
+	int x;
+	int y;
+}	t_player;
+
 void	quit(void *param);
 
 void	handle_key(mlx_key_data_t keydata, void *param);
@@ -60,6 +66,8 @@ int render_map(t_game *game, char *map[]);
 int	start_game(t_game *game,char *map_path);
 
 int	check_arg(int argc, char *argv[]);
+
+int	*find_player(char **map);
 
 int	*map_size(char **map);
 
