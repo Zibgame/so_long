@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:00:24 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 18:02:14 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 18:05:07 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	*find_player(char **map)
 		{
 			if (map[y][x] == 'P')
 			{
-				pos.x = x;
-				pos.y = y;
+				pos[0] = x;
+				pos[1] = y;
 				return (pos);
 			}
 			x++;
@@ -36,5 +36,5 @@ int	*find_player(char **map)
 	}
 	pos[0] = -1;
 	pos[1] = -1;
-	return (&pos);
+	return (pos);
 }
