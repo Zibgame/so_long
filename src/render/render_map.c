@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 16:41:20 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 16:56:27 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int render_map(t_game *game, char *map[])
 			else if (map[tile_y][tile_x] == '1')
 				display_tile(game, WALL, tile_x, tile_y);
 			else if (map[tile_y][tile_x] == 'C')
+			{
+				display_tile(game, GROUND, tile_x, tile_y);
 				display_tile(game, COLLEC, tile_x, tile_y);
+			}
 			else if (map[tile_y][tile_x] == 'E')
 				display_tile(game, EXIT, tile_x, tile_y);
 			else if (map[tile_y][tile_x] == 'P')
