@@ -12,12 +12,14 @@
 
 int	ft_isdigit(int c)
 {
-	int	is_digit;
+	int	bool;
 
-	is_digit = 1;
+	bool = 1;
 	if (!(c >= '0' && c <= '9'))
+	{
 		return (0);
-	return (is_digit);
+	}
+	return (bool);
 }
 
 // int main(void)

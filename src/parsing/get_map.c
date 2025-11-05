@@ -6,13 +6,34 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 11:17:32 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 11:57:06 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char **get_map()
+char **get_map(char *path)
 {
+	int		fd;
+	char	*line;
+	char	*content;
+	char	**map;
+	char	*tmp;
 
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+		return (NULL);
+	line = "";
+	content = ft_strdup("");
+	while (line == get_next_line(fd))
+	{
+		tmp = ft_strjoin(content, line);
+		free(content);
+		free(line);	
+		content = tmp;
+	}
+	close(fd);
+	map = ft_split(content, '\n');
+	free(content);
+	return (map);
 }

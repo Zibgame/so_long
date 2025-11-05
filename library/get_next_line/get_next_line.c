@@ -19,7 +19,7 @@ char	*ft_extract_line(char *str)
 
 	if (!str || str[0] == '\0')
 		return (NULL);
-	res = malloc((ft_strlen(str) + 2) * sizeof(char));
+	res = malloc((cft_strlen(str) + 2) * sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -45,13 +45,13 @@ char	*ft_read_fd(int fd, char *stash)
 	if (!buffer)
 		return (NULL);
 	byte_read = 1;
-	while (!ft_strchr(stash, '\n') && byte_read > 0)
+	while (!cft_strchr(stash, '\n') && byte_read > 0)
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		if (byte_read < 0)
 			return (free(buffer), free(stash), NULL);
 		buffer[byte_read] = '\0';
-		stash = ft_strjoin(stash, buffer);
+		stash = cft_strjoin(stash, buffer);
 		if (!stash)
 			return (free(buffer), NULL);
 	}
@@ -70,7 +70,7 @@ char	*ft_clean_stash(char *stash)
 		i++;
 	if (!stash[i])
 		return (free(stash), NULL);
-	new = malloc(ft_strlen(stash) - i + 1);
+	new = malloc(cft_strlen(stash) - i + 1);
 	if (!new)
 		return (free(stash), NULL);
 	i++;
@@ -95,30 +95,3 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-#include <fcntl.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	int		fd;
-	char	*line;
-	int		i;
-
-	fd = open("test.txt", O_RDONLY);
-	if (fd < 0)
-	{
-		perror("Erreur lors de l'ouverture du fichier");
-		return (1);
-	}
-
-	i = 1;
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("Ligne %d : %s", i, line);
-		free(line);
-		i++;
-	}
-	get_next_line(-1);
-close(fd);
-return (0);
-}

@@ -12,32 +12,19 @@
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+size_t	cft_strlen(const char *str)
 {
-	size_t	i;
+	size_t	len;
 
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strchr(char *s, int c)
-{
-	if (!s)
-		return (NULL);
-	while (*s)
+	len = 0;
+	while (str[len] != '\0')
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		len++;
 	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return (NULL);
+	return (len);
 }
 
-char	*ft_strjoin(char *left_str, char *buff)
+char	*cft_strjoin(char *left_str, char *buff)
 {
 	size_t	i;
 	size_t	j;
@@ -50,7 +37,7 @@ char	*ft_strjoin(char *left_str, char *buff)
 	}
 	if (!left_str || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(left_str) + ft_strlen(buff)) + 1));
+	str = malloc(sizeof(char) * ((cft_strlen(left_str) + cft_strlen(buff)) + 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
@@ -60,7 +47,22 @@ char	*ft_strjoin(char *left_str, char *buff)
 			str[i] = left_str[i];
 	while (buff[j] != '\0')
 		str[i++] = buff[j++];
-	str[ft_strlen(left_str) + ft_strlen(buff)] = '\0';
+	str[cft_strlen(left_str) + cft_strlen(buff)] = '\0';
 	free(left_str);
 	return (str);
+}
+
+char	*cft_strchr(char *s, int c)
+{
+	if (!s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }

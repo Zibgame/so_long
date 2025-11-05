@@ -61,7 +61,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putstr_fd(char *s, int fd);
-int	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void	*ft_calloc(size_t elementCount, size_t elementSize);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_lstadd_front(t_list **lst, t_list *new);

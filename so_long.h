@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/04 23:58:36 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/05 11:55:45 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
@@ -19,7 +19,6 @@
 # include <fcntl.h>
 # include "library/libft/libft.h"
 # include "library/get_next_line/get_next_line.h"
-# include "library/ft_printf/ft_printf.h"
 # include "library/minilibx-linux/mlx.h"
 
 # define KEY_ESC 65307
@@ -44,6 +43,8 @@ int	check_arg(int argc, char *argv[]);
 int start_game(t_game *game);
 
 int	main(int argc, char **argv);
+
+char **get_map(char *path);
 
 #endif
 

@@ -12,22 +12,26 @@
 
 #include "libft.h"
 
-int	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
-	int		len;
 
 	nb = n;
-	len = 0;
 	if (nb < 0)
 	{
-		len += write(fd, "-", 1);
+		write(fd, "-", 1);
 		nb = -nb;
 	}
 	if (nb >= 10)
-		len += ft_putnbr_fd(nb / 10, fd);
-	len += write(fd, &(char){'0' + (nb % 10)}, 1);
-	return (len);
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+	{
+		nb += '0';
+		write(fd, &nb, 1);
+	}
 }
 
 // int main(void)

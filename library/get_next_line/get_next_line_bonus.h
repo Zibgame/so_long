@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 01:58:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 20:45:27 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/10/27 12:56:23 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -23,7 +23,9 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_extract_line(char *stash);
+char	*cft_strjoin(char *s1, char *s2);
+char	*ft_extract_line(char *str);
 char	*ft_read_fd(int fd, char *stash);
+/* int main(void); */
 
 #endif
