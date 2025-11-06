@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 23:41:28 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 16:03:11 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/06 09:44:58 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int check_arg(int argc, char *argv[])
 	if (argc > 2 || argc < 2)
 	{
 		perror("\n ERROR: Numbers of Argument incorect \n \n");
+		return(1);
+	}
+	if (check_ber(argv[1]))
+	{
+		perror("\n ERROR: The extention is incorect \n \n");
 		return(1);
 	}
 	else

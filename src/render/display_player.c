@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_player.c                                      :+:      :+:    :+:   */
+/*   display_player.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 18:00:24 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 10:25:20 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/06 09:51:32 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/06 11:16:55 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_pos find_player(char *map[])
+mlx_image_t	*display_player(t_game *game, char *sprite, int x, int y)
 {
-	int tile_x;
-	int tile_y;
-	t_pos pos;
+	mlx_image_t	*player_img;
 
-	tile_y = 0;
-	while(map[tile_y])
+	player_img = display_tile(game, sprite, x, y);
+	if (!player_img)
 	{
-		tile_x = 0;
-		while(map[tile_y][tile_x])
-		{
-			if (map[tile_y][tile_x] == 'P')
-			{
-				pos.x = tile_x;
-				pos.y = tile_y;
-			}
-			tile_x++;
-		}
-		tile_y++;
+		perror("\n Erreur : impossible d'afficher le joueur.\n \n");
+		return (NULL);
 	}
-	return (pos);
+	return (player_img);
 }

@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 17:17:12 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/06 11:00:21 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int render_map(t_game *game, char *map[])
 			else if (map[tile_y][tile_x] == 'P')
 			{
 				display_tile(game, GROUND, tile_x, tile_y);
-				display_tile(game, START, tile_x, tile_y);
+				display_player(game, START, tile_x, tile_y);
 			}
 			else
 				display_tile(game, GLICHT, tile_x, tile_y);

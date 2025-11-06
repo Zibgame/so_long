@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_player.c                                      :+:      :+:    :+:   */
+/*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 18:00:24 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 10:25:20 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/06 12:01:08 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/06 12:15:52 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_pos find_player(char *map[])
+void move_player(t_game *game, int mx, int my)
 {
-	int tile_x;
-	int tile_y;
-	t_pos pos;
+	int new_x;
+	int new_y;
 
-	tile_y = 0;
-	while(map[tile_y])
-	{
-		tile_x = 0;
-		while(map[tile_y][tile_x])
-		{
-			if (map[tile_y][tile_x] == 'P')
-			{
-				pos.x = tile_x;
-				pos.y = tile_y;
-			}
-			tile_x++;
-		}
-		tile_y++;
-	}
-	return (pos);
+	new_x = game->player.x + mx;
+	new_y = game->player.y + my;
+	
+	game->player.x = new_x;
+	game->player.y = new_y;
+
+	game->player.img->instances[0].x = new_x * TILE_SIZE;
+	game->player.img->instances[0].y = new_y * TILE_SIZE;
+	return ;
 }

@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_player.c                                      :+:      :+:    :+:   */
+/*   create_player.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 18:00:24 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 10:25:20 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/06 10:27:07 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/06 11:19:30 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_pos find_player(char *map[])
+t_player create_player(t_game *game)
 {
-	int tile_x;
-	int tile_y;
-	t_pos pos;
+	t_player	player;
+	t_pos	find_pos;
+	mlx_image_t	*find_img;
+	find_pos = find_player(game->map);
 
-	tile_y = 0;
-	while(map[tile_y])
-	{
-		tile_x = 0;
-		while(map[tile_y][tile_x])
-		{
-			if (map[tile_y][tile_x] == 'P')
-			{
-				pos.x = tile_x;
-				pos.y = tile_y;
-			}
-			tile_x++;
-		}
-		tile_y++;
-	}
-	return (pos);
+	player.x = find_pos.x;
+	player.y = find_pos.y;
+
+	find_img = display_player(game, SPRITE, player.x, player.y);
+
+	player.img = find_img;
+	return (player);
 }
