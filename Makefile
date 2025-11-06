@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/06 12:14:20 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/06 12:40:36 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -45,6 +45,9 @@ SRC			= main.c \
 			  src/render/display_player.c \
 			  src/player/create_player.c \
 			  src/player/move_player.c \
+			  src/game/quit_game.c \
+			  src/game/start_game.c \
+			  src/input/handle_key.c \
 			  src/render/display_tile.c
 
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
