@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:01:08 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 12:15:52 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/06 13:32:27 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ void move_player(t_game *game, int mx, int my)
 
 	new_x = game->player.x + mx;
 	new_y = game->player.y + my;
+	if (game->map[new_y][new_x] == '1')
+		return ;
 	
 	game->player.x = new_x;
 	game->player.y = new_y;
-
 	game->player.img->instances[0].x = new_x * TILE_SIZE;
 	game->player.img->instances[0].y = new_y * TILE_SIZE;
 	return ;
