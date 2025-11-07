@@ -6,20 +6,17 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:41:06 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/10/19 01:34:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/07 22:37:27 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	int	bool;
-
-	bool = 1;
 	if (!(c >= '0' && c <= '9'))
 	{
 		return (0);
 	}
-	return (bool);
+	return (1);
 }
 
 // int main(void)

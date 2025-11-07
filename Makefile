@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/06 12:40:36 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/07 23:45:34 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -40,6 +40,7 @@ SRC			= main.c \
 			  src/parsing/get_map.c \
 			  src/render/render_map.c \
 			  src/utils/map_size.c \
+			  src/utils/randint.c \
 			  src/player/find_player.c \
 			  src/parsing/check_ber.c \
 			  src/render/display_player.c \
@@ -47,6 +48,7 @@ SRC			= main.c \
 			  src/player/move_player.c \
 			  src/game/quit_game.c \
 			  src/game/start_game.c \
+			  src/game/flood_fill.c \
 			  src/input/handle_key.c \
 			  src/render/display_tile.c
 

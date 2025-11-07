@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 12:16:30 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/07 23:45:44 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define COLLEC "assets/textures/food/Peach.png"
 # define EXIT "assets/textures/other/END.png"
 # define START "assets/textures/other/spwan.png"
+# define FLOWER "assets/textures/Flowers/grassandflowers1.png"
 # define SPRITE "assets/textures/player/idle/player_idle1.png"
 
 # define KEY_ESC 65307
@@ -69,6 +70,8 @@ typedef struct s_game
 int				main(int argc, char **argv);
 t_game			start_game(char *map_path);
 void			quit(void *param);
+void	flood_fill(t_game *game, int size[2], int x, int y);
+int	randint(int max);
 
 /* ================= INPUT ================= */
 void			handle_key(mlx_key_data_t keydata, void *param);
