@@ -14,10 +14,11 @@
 
 int randint(int max)
 {
-    static unsigned long seed = 0;
+    static unsigned long seed;
     int local;
     unsigned long mix;
 
+    seed = 0;
     if (max <= 0)
         max = 100;
 
