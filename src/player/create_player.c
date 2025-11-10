@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 10:27:07 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 00:56:51 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:55:16 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_player create_player(t_game *game)
 	t_player	player;
 	t_pos	find_pos;
 	mlx_image_t	*find_img;
-	find_pos = find_player(game->map.grid);
+	find_pos = find_player(game->grid);
 
 	player.x = find_pos.x;
 	player.y = find_pos.y;

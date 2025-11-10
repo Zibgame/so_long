@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 11:08:12 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 00:58:22 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:58:25 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	flood_fill(t_game *game, int size[2], int x, int y)
 {
 	char	**map;
 
-	map = game->map.grid;
+	map = game->grid;
 
 	if (x < 0 || y < 0 || x >= size[0] || y >= size[1])
 		return ;

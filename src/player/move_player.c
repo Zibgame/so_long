@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:01:08 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 00:57:08 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:55:29 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void move_player(t_game *game, int mx, int my)
 
 	new_x = game->player.x + mx;
 	new_y = game->player.y + my;
-	if (game->map.grid[new_y][new_x] == '1')
+	if (game->grid[new_y][new_x] == '1')
 		return ;
 	
 	game->player.x = new_x;

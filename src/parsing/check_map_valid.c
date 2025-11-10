@@ -6,17 +6,18 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 01:06:37 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 01:08:00 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:54:11 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_map_valid(t_game *game)
+int	check_map_valid(char **grid)
 {
-	if (!check_border(*game))
+	if (!check_border(grid))
 	{
 		return (0);
 	}
 	return (1);
 }
+
