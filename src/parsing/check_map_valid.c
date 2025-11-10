@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_map_valid.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 01:13:43 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/10 01:06:37 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/10 01:08:00 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int	check_map_valid(t_game *game)
 {
-	t_game	game;
-	if (check_arg(argc, argv))
-		return (1);
-	game = start_game(argv[1]);
-	if (!check_map_valid(&game))
-		return (1);
-	mlx_loop(game.mlx);
-	mlx_terminate(game.mlx);
-	return (0);
+	if (!check_border(*game))
+	{
+		return (0);
+	}
+	return (1);
 }

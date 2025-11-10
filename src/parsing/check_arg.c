@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 23:41:28 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 09:44:58 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:05:32 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,9 @@ int check_arg(int argc, char *argv[])
 	}
 	else
 	{
-		fd = open(argv[1], O_RDONLY);	
-		if (fd < 0)
-		{	
-			perror("Error");
-			close(fd);
-			return (1);
-		}
-		close(fd);
+		fd = check_openable(argv[1]);
+		if (fd == 0)
+			return (0);
 	}
 	perror("\n SUCCES : Number of argument good \n \n");
 	return(0);

@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/05 16:17:49 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/10 00:30:54 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ char **get_map(char *path)
 	char	*content;
 	char	*tmp;
 	char	**map;
-
-	fd = open(path, O_RDONLY);
-	if (fd < 0)
-	{
-		perror("\n ERROR: Failed to open map file \n \n");
-		return (NULL);
-	}
+	
+	fd = check_openable(path);
+	if (fd == 0)
+			return (NULL);
 	content = ft_strdup("");
 	if (!content)
 		return (NULL);

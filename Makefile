@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/07 23:45:34 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/10 01:13:10 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -43,6 +43,10 @@ SRC			= main.c \
 			  src/utils/randint.c \
 			  src/player/find_player.c \
 			  src/parsing/check_ber.c \
+			  src/parsing/check_border.c \
+			  src/utils/check_openable.c \
+			  src/parsing/create_map_struct.c \
+			  src/parsing/check_map_valid.c \
 			  src/render/display_player.c \
 			  src/player/create_player.c \
 			  src/player/move_player.c \

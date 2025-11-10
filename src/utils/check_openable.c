@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_openable.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 01:13:43 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/10 00:25:42 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/10 00:33:18 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int	check_openable(char *map_path)
 {
-	t_game	game;
-	if (check_arg(argc, argv))
-		return (1);
-	game = start_game(argv[1]);
-	if (!check_map_valid(&game))
-		return (1);
-	mlx_loop(game.mlx);
-	mlx_terminate(game.mlx);
-	return (0);
+	int	fd;
+
+	fd = open(map_path, O_RDONLY);
+	if (fd < 0)
+	{
+		perror("\n ERROR: Failed to open map file \n \n");
+		return (0);
+	}
+	return (fd);
 }

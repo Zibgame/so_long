@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/07 23:45:44 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:13:30 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,18 @@ typedef struct s_player
 	mlx_image_t	*img;
 }	t_player;
 
+typedef struct s_map
+{
+	char **grid;
+	char		*map_path;
+	int	width; //largeur
+	int	height; //hauteur
+}	t_map;
+
 typedef struct s_game
 {
 	mlx_t		*mlx;
-	char		**map;
-	char		*map_path;
+	t_map	 	map;
 	t_player	player;
 }	t_game;
 
@@ -81,6 +88,12 @@ int				check_arg(int argc, char *argv[]);
 int				check_ber(char *name);
 char			**get_map(char *path);
 int				*map_size(char **map);
+int	check_openable(char *map_path);
+int	check_top_bottom(t_game game);
+int	check_sides(t_game game);
+int	check_border(t_game game);
+t_map	create_map_struct(char *path);
+int	check_map_valid(t_game *game);
 
 /* ================= PLAYER ================= */
 t_pos			find_player(char **map);
