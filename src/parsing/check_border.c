@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 02:10:03 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 01:59:25 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:57:04 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_top_bottom(char **grid)
 	x = 0;
 	while (x < size[0])
 	{
-		if (grid[0][x] != '1' || grid[size[1] - 1][x] != '1')
+		if (grid[0][x] != '1' || grid[size[1] - 0][x] != '1')
 			return (0);
 		x++;
 	}
