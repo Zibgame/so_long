@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 01:06:37 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 01:54:11 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 09:09:06 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	check_map_valid(char **grid)
 	{
 		return (0);
 	}
+	if (!(get_nb_tile(grid, 'C') >= 1))
+		return (0);
 	return (1);
 }
 
