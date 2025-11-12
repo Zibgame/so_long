@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:26:50 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:31:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:23:14 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	check_collectible(t_game *game)
 	{
 		game->grid[y][x] = '0';
 		game->player.item++;
+		game->nbitem--;
+		printf("%d",game->player.item);
 
 		update_tile(game,x,y);
 		return (1);

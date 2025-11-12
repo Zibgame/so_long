@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:31:12 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 12:06:46 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:22:49 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_exit(t_game *game)
 
 	if (game->grid[y][x] == 'E')
 	{
-		if (game->player.item == game->nbitem)
+		if (game->nbitem == 0)
 		{
 			game->grid[y][x] = '0';
 			quit(game);

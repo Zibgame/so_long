@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:39:27 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 12:07:29 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:11:15 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void start_game(t_game *game, char *map_path)
 		perror("\n ERROR \n \n ");
 	render_map(game, game->grid);
 	game->player = create_player(game);
-	game->nbitem = get_nb_tile(game->grid, 'C') + 2;
+	game->nbitem = get_nb_tile(game->grid, 'C');
 	mlx_key_hook(game->mlx, handle_key, game);
 	mlx_close_hook(game->mlx, quit, game);
 }
