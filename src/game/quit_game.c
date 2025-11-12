@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:36:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:38:49 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:42:41 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	quit(void *param)
 	if (game->player.img)
 		mlx_delete_image(game->mlx, game->player.img);
 	if (game->mlx)
-		mlx_terminate(game->mlx);
+		mlx_close_window(game->mlx);
 	exit(0);
 }
