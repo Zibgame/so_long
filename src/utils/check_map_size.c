@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 09:57:23 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 09:57:56 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:03:03 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	check_map_size(char **grid)
 	int	width;
 	int	height;
 
-	width = ft_strlen(map[0]);
+	width = ft_strlen(grid[0]);
 	height = 0;
-	while (map[height])
+	while (grid[height])
 		height++;
 
-	if (width > MAX_TILES_X || height > MAX_TILES_Y)
+	if (width >  WIN_WIDTH || height > WIN_HEIGHT) 
 	{
 		return (0);
 	}
