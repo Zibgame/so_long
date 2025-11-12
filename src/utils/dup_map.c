@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_collectible.c                                :+:      :+:    :+:   */
+/*   dup_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 10:26:50 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 12:44:57 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/12 13:00:15 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/12 13:00:21 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_collectible(t_game *game)
+char	**dup_map(char **src)
 {
-	int	x;
-	int	y;
+	int		y;
+	int		height;
+	char	**copy;
 
-	x = game->player.x;
-	y = game->player.y;
-
-	if (game->grid[y][x] == 'C')
+	height = map_size(src)[1];
+	copy = malloc(sizeof(char *) * (height + 1));
+	if (!copy)
+		return (NULL);
+	y = 0;
+	while (src[y])
 	{
-		game->grid[y][x] = '0';
-		game->player.item++;
-		game->nbitem--;
-
-		update_tile(game,x,y);
-		return (1);
+		copy[y] = ft_strdup(src[y]);
+		if (!copy[y])
+			return (free_map(copy), NULL);
+		y++;
 	}
-	return (0);
+	copy[y] = NULL;
+	return (copy);
 }
-

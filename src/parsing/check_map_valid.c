@@ -6,14 +6,17 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 01:06:37 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 10:00:42 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:15:54 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_map_valid(char **grid)
+int	check_map_valid(char *path)
 {
+	char **grid;
+
+	grid = get_map(path);
 	if (!check_border(grid))
 	{
 		return (0);

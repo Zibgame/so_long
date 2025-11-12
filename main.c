@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:48:35 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:18:59 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ int main(int argc, char **argv)
 {
 	t_game game;
 
-	check_arg(argc, argv);
+	if (check_arg(argc, argv))
+		return (1);
+	if (!check_map_valid(argv[1]))
+		return (1);
 	start_game(&game, argv[1]);
 	mlx_loop(game.mlx);
 

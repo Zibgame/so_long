@@ -6,12 +6,11 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 23:41:28 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 01:05:32 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:10:02 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 #include <fcntl.h>
 #include <unistd.h>
 

@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_collectible.c                                :+:      :+:    :+:   */
+/*   check_path.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 10:26:50 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 12:44:57 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/12 13:02:09 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/12 13:08:15 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_collectible(t_game *game)
+int	check_path(char **grid)
 {
-	int	x;
-	int	y;
+	t_pos	p;
+	char	**copy;
+	int		y;
+	int		x;
 
-	x = game->player.x;
-	y = game->player.y;
-
-	if (game->grid[y][x] == 'C')
+	p = find_player(grid);
+	copy = dup_map(grid);
+	if (!copy)
+		return (0);
+	flood_fill(copy, p.x, p.y);
+	y = -1;
+	while (copy[++y])
 	{
-		game->grid[y][x] = '0';
-		game->player.item++;
-		game->nbitem--;
-
-		update_tile(game,x,y);
-		return (1);
+		x = -1;
+		while (copy[y][++x])
+		{
+			if (copy[y][x] == 'C' || copy[y][x] == 'E')
+			{
+				free_map(copy);
+				return (0);
+			}
+		}
 	}
-	return (0);
+	free_map(copy);
+	return (1);
 }
-

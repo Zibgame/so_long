@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 12:00:50 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:17:08 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,14 @@ typedef struct s_game
 int				main(int argc, char **argv);
 void start_game(t_game *game, char *map_path);
 void			quit(void *param);
-void	flood_fill(t_game *game, int size[2], int x, int y);
+void	flood_fill(char **grid, int x, int y);
 void	free_map(char **map);
 unsigned long	ft_cpu_cycles(void);
 int	ft_randint(int max);
 int	check_exit(t_game *game);
 void	free_map(char **map);
+char	**dup_map(char **src);
+int	check_path(char **grid);
 
 /* ================= INPUT ================= */
 void			handle_key(mlx_key_data_t keydata, void *param);
@@ -92,7 +94,7 @@ int	check_openable(char *map_path);
 int	check_top_bottom(char **grid);
 int	check_sides(char **grid);
 int	check_border(char **grid);
-int	check_map_valid(char **grid);
+int	check_map_valid(char *path);
 int get_nb_tile(char **grid,char c);
 
 /* ================= PLAYER ================= */
