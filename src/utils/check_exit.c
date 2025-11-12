@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:31:12 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:34:37 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:36:13 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	check_exit(t_game *game)
 		game->grid[y][x] = '0';
 		game->player.item++;
 
+		update_tile(game,x,y);
 		quit(&game);
 		return (1);
 	}
