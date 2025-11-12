@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quit_game.c                                        :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 12:36:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:38:49 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/12 11:39:30 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/12 11:39:46 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	quit(void *param)
+void	free_map(char **map)
 {
-	t_game	*game;
+	int	i;
 
-	game = (t_game *)param;
-	if (game->grid)
-		free_map(game->grid);
-	if (game->player.img)
-		mlx_delete_image(game->mlx, game->player.img);
-	if (game->mlx)
-		mlx_terminate(game->mlx);
-	exit(0);
+	if (!map)
+		return;
+	i = 0;
+	while (map[i])
+		free(map[i++]);
+	free(map);
 }

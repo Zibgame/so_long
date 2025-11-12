@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/12 11:34:09 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/12 11:40:09 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -45,6 +45,7 @@ SRC			= main.c \
 			  src/parsing/check_border.c \
 			  src/parsing/get_nb_collectible.c \
 			  src/utils/check_openable.c \
+			  src/utils/free_map.c \
 			  src/utils/check_collectible.c \
 			  src/utils/check_map_size.c \
 			  src/utils/check_exit.c \

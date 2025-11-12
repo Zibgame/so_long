@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:33:31 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:39:58 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	free_map(char **map);
 unsigned long	ft_cpu_cycles(void);
 int	ft_randint(int max);
 int	check_exit(t_game *game);
+void	free_map(char **map);
 
 /* ================= INPUT ================= */
 void			handle_key(mlx_key_data_t keydata, void *param);
