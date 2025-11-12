@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 15:51:18 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:54:35 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static char	*read_file_content(int fd)
 {
-	char	buffer[1024 + 1];
 	ssize_t	bytes_read;
+	char	buffer[1024 + 1];
 	char	*content;
 	char	*tmp;
 
