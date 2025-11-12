@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:16:07 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:27:11 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 #define MAX_TILES_Y 24
 
 # define GROUND "assets/textures/Grass/Grass_23-42x42.png"
-# define GROUND_S 25
+# define GROUND_S 5
 # define WALL "assets/textures/Bricks/Bricks_16-42x42.png"
 # define GLICHT "assets/textures/other/glicht.png"
 # define COLLEC "assets/textures/food/Peach.png"
@@ -100,6 +100,7 @@ void move_player(t_game *game, int mx, int my);
 int	check_collectible(t_game *game);
 
 /* ================= RENDER ================= */
+void	draw_tile(t_game *game, char **map, int x, int y);
 int				render_map(t_game *game, char *map[]);
 mlx_image_t		*display_tile(t_game *game, char *path, int x, int y);
 void	update_tile(t_game *game, int x, int y);
