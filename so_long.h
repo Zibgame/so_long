@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 09:09:31 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 09:53:57 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 # define GAME_NAME "So Long"
 
 # define TILE_SIZE 42
-# define MAP_WIDTH 16
-# define MAP_HEIGHT 16
+#define MAX_WIN_WIDTH 1920
+#define MAX_WIN_HEIGHT 1080
 # define WIN_WIDTH (MAP_WIDTH * TILE_SIZE)
 # define WIN_HEIGHT (MAP_HEIGHT * TILE_SIZE)
 
