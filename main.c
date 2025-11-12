@@ -6,31 +6,22 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:43:14 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:48:35 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-    t_game game;
+	t_game game;
 
-    if (check_arg(argc, argv))
-        return (1);
+	check_arg(argc, argv);
+	start_game(&game, argv[1]);
+	mlx_loop(game.mlx);
 
-    char **grid = get_map(argv[1]);
-    if (!grid)
-        return (1);
-
-    if (!check_map_valid(grid))
-    {
-        ft_putendl_fd("Error\nInvalid map", 2);
-        return (1);
-    }
-
-    game = start_game(argv[1]);
-    mlx_loop(game.mlx);
-    mlx_terminate(game.mlx);
-    return (0);
+	if (game.grid) free_map(game.grid);
+	if (game.player.img) mlx_delete_image(game.mlx, game.player.img);
+	if (game.mlx) mlx_terminate(game.mlx);
+	return (0);
 }
