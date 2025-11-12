@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:00:15 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 13:00:21 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:30:27 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ char	**dup_map(char **src)
 	{
 		copy[y] = ft_strdup(src[y]);
 		if (!copy[y])
-			return (free_map(copy), NULL);
+		{
+			while (y-- > 0)
+				free(copy[y]);
+			free(copy);
+			return (NULL);
+		}
 		y++;
 	}
 	copy[y] = NULL;
