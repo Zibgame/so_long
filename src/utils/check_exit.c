@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:31:12 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:51:04 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:57:48 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ int	check_exit(t_game *game)
 	if (game->grid[y][x] == 'E')
 	{
 		game->grid[y][x] = '0';
-		game->player.item++;
-
-		update_tile(game,x,y);
-		quit(game);
+		if (game->player.item == get_nb_tile(game->grid, 'E'))
+			quit(game);
 		return (1);
 	}
 	return (0);
