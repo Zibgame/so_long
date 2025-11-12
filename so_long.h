@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 10:11:43 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:14:29 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 #define MAX_TILES_Y 24
 
 # define GROUND "assets/textures/Grass/Grass_23-42x42.png"
+# define GROUND_S 70
 # define WALL "assets/textures/Bricks/Bricks_16-42x42.png"
 # define GLICHT "assets/textures/other/glicht.png"
 # define COLLEC "assets/textures/food/Peach.png"
@@ -56,6 +57,7 @@ typedef struct s_player
 	int			x;
 	int			y;
 	mlx_image_t	*img;
+	int			item;
 }	t_player;
 
 typedef struct s_game
@@ -95,10 +97,12 @@ t_pos			find_player(char **map);
 t_player		create_player(t_game *game);
 mlx_image_t		*display_player(t_game *game, char *sprite, int x, int y);
 void move_player(t_game *game, int mx, int my);
+int	check_collectible(t_game *game);
 
 /* ================= RENDER ================= */
 int				render_map(t_game *game, char *map[]);
 mlx_image_t		*display_tile(t_game *game, char *path, int x, int y);
+void	update_tile(t_game *game, int x, int y);
 
 /* == OTHER ==*/
 int	check_map_size(char **grid);

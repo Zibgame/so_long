@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_player.c                                      :+:      :+:    :+:   */
+/*   check_collectible.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 12:01:08 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 10:56:00 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/12 10:26:50 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/12 11:09:00 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void move_player(t_game *game, int mx, int my)
+int	check_collectible(t_game *game)
 {
-	int new_x;
-	int new_y;
+	int	x;
+	int	y;
 
-	new_x = game->player.x + mx;
-	new_y = game->player.y + my;
-	if (game->grid[new_y][new_x] == '1')
-		return ;
-	
-	game->player.x = new_x;
-	game->player.y = new_y;
+	x = game->player.x;
+	y = game->player.y;
 
-	check_collectible(game);
+	if (game->grid[y][x] == 'C')
+	{
+		game->grid[y][x] = '0';
+		game->player.item++;
 
-	game->player.img->instances[0].x = new_x * TILE_SIZE;
-	game->player.img->instances[0].y = new_y * TILE_SIZE;
-
-	return ;
+		update_tile(game,x,y);
+		return (1);
+	}
+	return (0);
 }
+

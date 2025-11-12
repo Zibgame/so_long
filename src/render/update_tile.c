@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_player.c                                      :+:      :+:    :+:   */
+/*   update_tile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 12:01:08 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 10:56:00 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/12 10:56:47 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/12 11:13:51 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void move_player(t_game *game, int mx, int my)
+void	update_tile(t_game *game, int x, int y)
 {
-	int new_x;
-	int new_y;
+	display_tile(game, GROUND, x, y);
 
-	new_x = game->player.x + mx;
-	new_y = game->player.y + my;
-	if (game->grid[new_y][new_x] == '1')
-		return ;
-	
-	game->player.x = new_x;
-	game->player.y = new_y;
+	if (ft_randint(100) > GROUND_S)
+		display_tile(game, FLOWER, x, y);
 
-	check_collectible(game);
-
-	game->player.img->instances[0].x = new_x * TILE_SIZE;
-	game->player.img->instances[0].y = new_y * TILE_SIZE;
-
-	return ;
+	if (game->player.x == x && game->player.y == y)
+	{
+		mlx_delete_image(game->mlx, game->player.img);
+		game->player.img = display_player(game, SPRITE, x, y);
+	}
 }
