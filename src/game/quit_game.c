@@ -6,13 +6,10 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:36:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:49:49 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:50:11 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-/* quit_game.c */
 #include "so_long.h"
 
 void quit(void *param)
@@ -22,5 +19,5 @@ void quit(void *param)
 	game = (t_game *)param;
 	if (!game || !game->mlx)
 		return ;
-	mlx_close_window(game->mlx); /* arrête proprement la loop */
+	mlx_close_window(game->mlx);
 }
