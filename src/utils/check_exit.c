@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:31:12 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:36:13 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:51:04 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_exit(t_game *game)
 		game->player.item++;
 
 		update_tile(game,x,y);
-		quit(&game);
+		quit(game);
 		return (1);
 	}
 	return (0);
