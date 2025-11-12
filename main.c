@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:42:52 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/11 22:05:11 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:43:14 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int main(int argc, char *argv[])
 
     game = start_game(argv[1]);
     mlx_loop(game.mlx);
-    quit(&game);
+    mlx_terminate(game.mlx);
     return (0);
 }
