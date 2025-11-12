@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:26:50 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 12:44:57 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:13:20 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ int	check_collectible(t_game *game)
 
 	x = game->player.x;
 	y = game->player.y;
-
 	if (game->grid[y][x] == 'C')
 	{
 		game->grid[y][x] = '0';
 		game->player.item++;
 		game->nbitem--;
-
-		update_tile(game,x,y);
+		update_tile(game, x, y);
 		return (1);
 	}
 	return (0);
 }
-

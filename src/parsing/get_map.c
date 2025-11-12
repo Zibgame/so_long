@@ -6,20 +6,20 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 13:26:21 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:33:29 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char **get_map(char *path)
+char	**get_map(char *path)
 {
-	int		fd;
+	ssize_t	bytes_read;
 	char	buffer[1024 + 1];
 	char	*content = NULL;
 	char	*tmp;
-	ssize_t	bytes_read;
 	char	**map = NULL;
+	int	fd;
 
 	fd = check_openable(path);
 	if (fd <= 0)

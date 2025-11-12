@@ -6,19 +6,19 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:39:27 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 12:11:15 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 15:38:19 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void start_game(t_game *game, char *map_path)
+void	start_game(t_game *game, char *map_path)
 {
 	ft_bzero(game, sizeof(t_game));
 	game->grid = get_map(map_path);
 	game->path = map_path;
-	game->mlx = mlx_init(map_size(game->grid)[0] * TILE_SIZE,
-		map_size(game->grid)[1] * TILE_SIZE, GAME_NAME, false);
+	game->mlx = mlx_init(map_size(game->grid)[0] * TILE_SIZE, \
+			map_size(game->grid)[1] * TILE_SIZE, GAME_NAME, false);
 	if (!game->mlx)
 		perror("\n ERROR \n \n ");
 	render_map(game, game->grid);
