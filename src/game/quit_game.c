@@ -6,22 +6,21 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:36:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:42:41 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:49:49 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	quit(void *param)
+/* quit_game.c */
+#include "so_long.h"
+
+void quit(void *param)
 {
-	t_game	*game;
+	t_game *game;
 
 	game = (t_game *)param;
-	if (game->grid)
-		free_map(game->grid);
-	if (game->player.img)
-		mlx_delete_image(game->mlx, game->player.img);
-	if (game->mlx)
-		mlx_close_window(game->mlx);
-	exit(0);
+	if (!game || !game->mlx)
+		return ;
+	mlx_close_window(game->mlx); /* arrête proprement la loop */
 }
