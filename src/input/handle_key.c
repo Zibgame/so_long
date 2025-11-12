@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:35:01 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 13:25:31 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:22:32 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	handle_key(mlx_key_data_t keydata, void *param)
 	t_game	*game;
 
 	game = (t_game *)param;
-	if (keydata.action != MLX_PRESS)
+	if (keydata.action != MLX_PRESS && keydata.action != MLX_REPEAT)
 		return;
 	if (keydata.key == MLX_KEY_ESCAPE)
 		quit(game);
