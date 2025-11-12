@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 07:59:20 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 08:23:09 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_game			start_game(char *map_path);
 void			quit(void *param);
 void	flood_fill(t_game *game, int size[2], int x, int y);
 void	free_map(char **map);
+unsigned long	ft_cpu_cycles(void);
 int	ft_randint(int max);
 
 /* ================= INPUT ================= */
