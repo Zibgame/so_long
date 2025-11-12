@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 16:01:49 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:06:11 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,26 @@ static char	*read_file_content(int fd)
 	content = ft_strdup("");
 	if (!content)
 		return (NULL);
-	bytes_read = read(fd, buffer, 1024);
+	bytes_read = 1;
 	while (bytes_read > 0)
 	{
+		bytes_read = read(fd, buffer, 1024);
+		if (bytes_read < 0)
+		{
+			free(content);
+			return (NULL);
+		}
+		if (bytes_read == 0)
+			break;
 		buffer[bytes_read] = '\0';
 		tmp = ft_strjoin(content, buffer);
-		free(content);
 		if (!tmp)
+		{
+			free(content);
 			return (NULL);
-		content = tmp;
-		bytes_read = read(fd, buffer, 1024);
-	}
-	if (bytes_read < 0)
-	{
+		}
 		free(content);
-		return (NULL);
+		content = tmp;
 	}
 	return (content);
 }
