@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:49:17 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 12:00:50 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct s_game
 	char			**grid;
 	char	*path;
 	t_player	player;
+	int nbitem;
 }	t_game;
 
 /* ================= CORE ================= */
