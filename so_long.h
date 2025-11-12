@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 08:23:09 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 09:02:08 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int	check_top_bottom(char **grid);
 int	check_sides(char **grid);
 int	check_border(char **grid);
 int	check_map_valid(char **grid);
+int get_nb_tile(t_game *game,char c);
 
 /* ================= PLAYER ================= */
 t_pos			find_player(char **map);
