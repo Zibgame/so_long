@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 09:55:35 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 09:58:59 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,9 @@ void move_player(t_game *game, int mx, int my);
 /* ================= RENDER ================= */
 int				render_map(t_game *game, char *map[]);
 mlx_image_t		*display_tile(t_game *game, char *path, int x, int y);
+
+/* == OTHER ==*/
+int	check_map_size(char **grid);
 
 #endif
 
