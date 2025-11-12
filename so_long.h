@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:14:29 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:16:07 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 #define MAX_TILES_Y 24
 
 # define GROUND "assets/textures/Grass/Grass_23-42x42.png"
-# define GROUND_S 70
+# define GROUND_S 25
 # define WALL "assets/textures/Bricks/Bricks_16-42x42.png"
 # define GLICHT "assets/textures/other/glicht.png"
 # define COLLEC "assets/textures/food/Peach.png"
