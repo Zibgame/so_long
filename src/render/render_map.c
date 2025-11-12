@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 10:39:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:15:25 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int render_map(t_game *game, char *map[])
 			if (map[tile_y][tile_x] == '0')
 			{
 				display_tile(game, GROUND, tile_x, tile_y);
-				if (ft_randint(100) > 70)
+				if (ft_randint(100) < GROUND_S)
 					display_tile(game, FLOWER, tile_x, tile_y);
 			}
 			else if (map[tile_y][tile_x] == '1')

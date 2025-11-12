@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:56:47 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:13:51 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 11:15:44 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	update_tile(t_game *game, int x, int y)
 {
 	display_tile(game, GROUND, x, y);
 
-	if (ft_randint(100) > GROUND_S)
+	if (ft_randint(100) < GROUND_S)
 		display_tile(game, FLOWER, x, y);
 
 	if (game->player.x == x && game->player.y == y)
