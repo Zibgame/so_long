@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 15:54:35 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 16:01:49 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ static char	*read_file_content(int fd)
 		if (!tmp)
 			return (NULL);
 		content = tmp;
+		bytes_read = read(fd, buffer, 1024);
+	}
+	if (bytes_read < 0)
+	{
+		free(content);
+		return (NULL);
 	}
 	return (content);
 }
