@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 09:58:59 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/12 10:11:43 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # define TILE_SIZE 42
 #define MAX_WIN_WIDTH 1920
 #define MAX_WIN_HEIGHT 1080
-# define WIN_WIDTH (MAX_WIN_WIDTH / TILE_SIZE)
-# define WIN_HEIGHT (MAX_WIN_HEIGHT / TILE_SIZE)
+#define MAX_TILES_X 44
+#define MAX_TILES_Y 24
 
 # define GROUND "assets/textures/Grass/Grass_23-42x42.png"
 # define WALL "assets/textures/Bricks/Bricks_16-42x42.png"
