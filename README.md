@@ -24,7 +24,7 @@ Ce projet permet de découvrir :
 
 ## 🧩 Fonctionnalités
 
-- 🧭 Déplacement fluide du joueur (↑ ↓ ← →)
+- 🧭 Déplacement fluide du joueur (↑ ↓ ← →) 
 - 🪙 Collecte d’objets à ramasser
 - 🚪 Sortie déverrouillée après avoir tout ramassé
 - 🧱 Map personnalisable via un fichier `.ber`
