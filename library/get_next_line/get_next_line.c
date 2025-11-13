@@ -94,4 +94,3 @@ char	*get_next_line(int fd)
 	stash = ft_clean_stash(stash);
 	return (line);
 }
-

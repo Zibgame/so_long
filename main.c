@@ -12,9 +12,9 @@
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_game game;
+	t_game	game;
 
 	if (check_arg(argc, argv))
 		return (1);
@@ -22,9 +22,11 @@ int main(int argc, char **argv)
 		return (1);
 	start_game(&game, argv[1]);
 	mlx_loop(game.mlx);
-
-	if (game.grid) free_map(game.grid);
-	if (game.player.img) mlx_delete_image(game.mlx, game.player.img);
-	if (game.mlx) mlx_terminate(game.mlx);
+	if (game.grid)
+		free_map(game.grid);
+	if (game.player.img)
+		mlx_delete_image(game.mlx, game.player.img);
+	if (game.mlx)
+		mlx_terminate(game.mlx);
 	return (0);
 }

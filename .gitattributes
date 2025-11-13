@@ -1,5 +1,6 @@
 # ✅ Compte uniquement les fichiers C
 *.c linguist-detectable=true
+*.asm linguist-detectable=true
 *.h linguist-detectable=true
 
 # 🚫 Ignore tout le reste dans les stats GitHub

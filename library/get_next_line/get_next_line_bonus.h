@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,6 +26,5 @@ char	*get_next_line(int fd);
 char	*cft_strjoin(char *s1, char *s2);
 char	*ft_extract_line(char *str);
 char	*ft_read_fd(int fd, char *stash);
-/* int main(void); */
 
 #endif
