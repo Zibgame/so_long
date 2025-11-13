@@ -14,19 +14,19 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-int check_arg(int argc, char *argv[])
+int	check_arg(int argc, char *argv[])
 {
-	int fd;
+	int	fd;
 
 	if (argc > 2 || argc < 2)
 	{
 		perror("\n ERROR: Numbers of Argument incorect \n \n");
-		return(1);
+		return (1);
 	}
 	if (check_ber(argv[1]))
 	{
 		perror("\n ERROR: The extention is incorect \n \n");
-		return(1);
+		return (1);
 	}
 	else
 	{
@@ -35,5 +35,5 @@ int check_arg(int argc, char *argv[])
 			return (0);
 	}
 	perror("\n SUCCES : Number of argument good \n \n");
-	return(0);
+	return (0);
 }

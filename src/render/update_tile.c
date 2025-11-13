@@ -15,10 +15,8 @@
 void	update_tile(t_game *game, int x, int y)
 {
 	display_tile(game, GROUND, x, y);
-
 	if (ft_randint(100) < GROUND_S)
 		display_tile(game, FLOWER, x, y);
-
 	if (game->player.x == x && game->player.y == y)
 	{
 		mlx_delete_image(game->mlx, game->player.img);

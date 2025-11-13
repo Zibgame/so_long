@@ -12,10 +12,10 @@
 
 #include "so_long.h"
 
-mlx_image_t *display_tile(t_game *game,char *path, int x, int y)
+mlx_image_t	*display_tile(t_game *game, char *path, int x, int y)
 {
 	mlx_texture_t	*tex;
-	mlx_image_t *img;
+	mlx_image_t		*img;
 
 	tex = mlx_load_png(path);
 	if (!tex)

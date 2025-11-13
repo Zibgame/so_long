@@ -66,4 +66,3 @@ int	check_border(char **grid)
 	}
 	return (1);
 }
-

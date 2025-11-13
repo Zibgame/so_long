@@ -14,9 +14,9 @@
 
 void	flood_fill(char **grid, int x, int y)
 {
-	int *size;
+	int	*size;
 
-	size = map_size(grid); 
+	size = map_size(grid);
 	if (x < 0 || y < 0 || x >= size[0] || y >= size[1])
 		return ;
 	if (grid[y][x] == '1' || grid[y][x] == 'F')

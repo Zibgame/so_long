@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "so_long.h"
 
 int	check_exit(t_game *game)
@@ -20,7 +19,6 @@ int	check_exit(t_game *game)
 
 	x = game->player.x;
 	y = game->player.y;
-
 	if (game->grid[y][x] == 'E')
 	{
 		if (game->nbitem == 0)
@@ -32,4 +30,3 @@ int	check_exit(t_game *game)
 	}
 	return (0);
 }
-

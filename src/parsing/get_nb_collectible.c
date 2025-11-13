@@ -35,4 +35,3 @@ int	get_nb_tile(char **grid, char c)
 	}
 	return (nb);
 }
-

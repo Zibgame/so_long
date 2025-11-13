@@ -12,17 +12,17 @@
 
 #include "so_long.h"
 
-t_pos find_player(char *map[])
+t_pos	find_player(char *map[])
 {
-	int tile_x;
-	int tile_y;
-	t_pos pos;
+	int		tile_x;
+	int		tile_y;
+	t_pos	pos;
 
 	tile_y = 0;
-	while(map[tile_y])
+	while (map[tile_y])
 	{
 		tile_x = 0;
-		while(map[tile_y][tile_x])
+		while (map[tile_y][tile_x])
 		{
 			if (map[tile_y][tile_x] == 'P')
 			{

@@ -22,7 +22,8 @@ static char	*read_content(int fd)
 	content = ft_strdup("");
 	if (!content)
 		return (NULL);
-	while ((bytes = read(fd, buffer, 1024)) > 0)
+	bytes = read(fd, buffer, 1024);
+	while (bytes > 0)
 	{
 		buffer[bytes] = '\0';
 		tmp = ft_strjoin(content, buffer);

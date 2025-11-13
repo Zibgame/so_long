@@ -19,16 +19,13 @@ int	check_collectible(t_game *game)
 
 	x = game->player.x;
 	y = game->player.y;
-
 	if (game->grid[y][x] == 'C')
 	{
 		game->grid[y][x] = '0';
 		game->player.item++;
 		game->nbitem--;
-
-		update_tile(game,x,y);
+		update_tile(game, x, y);
 		return (1);
 	}
 	return (0);
 }
-
