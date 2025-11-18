@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 23:41:28 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 11:32:45 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 15:15:43 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int	check_arg(int argc, char *argv[])
 	else
 	{
 		fd = check_openable(argv[1]);
-		if (fd == 0)
-			return (0);
+		if (fd < 0)
+			return (1);
+		close(fd);
 	}
 	return (0);
 }

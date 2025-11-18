@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 00:25:42 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/10 01:05:41 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 15:10:00 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	check_openable(char *map_path)
 	if (fd < 0)
 	{
 		perror("\n ERROR: Failed to open map file \n \n");
-		return (0);
+		return (1);
 	}
-	return (fd);
+	close(fd)
+	return (0);
 }
