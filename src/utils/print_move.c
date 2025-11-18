@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_player.c                                    :+:      :+:    :+:   */
+/*   print_move.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 10:27:07 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 13:50:52 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/18 13:56:31 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/18 14:06:10 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_player	create_player(t_game *game)
+void	print_move(t_player player)
 {
-	mlx_image_t	*find_img;
-	t_player	player;
-	t_pos		find_pos;
-
-	find_pos = find_player(game->grid);
-	player.x = find_pos.x;
-	player.y = find_pos.y;
-	player.move = 0;
-	find_img = display_player(game, SPRITE, player.x, player.y);
-	player.img = find_img;
-	return (player);
+	write(1, "\r\033[K", 4);
+	ft_putstr_fd("Nombre de mouvement : ", 1);
+	ft_putnbr_fd(player.move, 1);
 }

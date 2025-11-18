@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 11:40:46 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 14:06:35 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_player
 	int			y;
 	mlx_image_t	*img;
 	int			item;
+	int			move;
 }	t_player;
 
 typedef struct s_game
@@ -108,6 +109,7 @@ void			draw_tile(t_game *game, char **map, int x, int y);
 int				render_map(t_game *game, char *map[]);
 mlx_image_t		*display_tile(t_game *game, char *path, int x, int y);
 void			update_tile(t_game *game, int x, int y);
+void			print_move(t_player player);
 
 /* == OTHER == */
 int				check_map_size(char **grid);
