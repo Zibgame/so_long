@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 01:58:41 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/10/28 14:28:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 11:41:52 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,3 @@ char	*get_next_line(int fd)
 	stash = ft_clean_stash(stash);
 	return (line);
 }
-
