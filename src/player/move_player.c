@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:01:08 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 13:59:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:27:31 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	move_player(t_game *game, int mx, int my)
 	game->player.y = new_y;
 	check_collectible(game);
 	check_exit(game);
+	check_monster(game);
 	game->player.move++;
 	print_move(game->player);
 	game->player.img->instances[0].x = new_x * TILE_SIZE;

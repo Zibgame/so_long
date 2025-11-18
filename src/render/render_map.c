@@ -6,11 +6,30 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:26:28 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:33:31 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	draw_ground(t_game *game, int x, int y)
+{
+	display_tile(game, GROUND, x, y);
+	if (ft_randint(100) < GROUND_S)
+		display_tile(game, FLOWER, x, y);
+}
+
+static void	draw_collectible(t_game *game, int x, int y)
+{
+	display_tile(game, GROUND, x, y);
+	display_tile(game, COLLEC, x, y);
+}
+
+static void	draw_player_spawn(t_game *game, int x, int y)
+{
+	display_tile(game, GROUND, x, y);
+	display_player(game, START, x, y);
+}
 
 void	draw_tile(t_game *game, char **map, int x, int y)
 {
@@ -18,24 +37,19 @@ void	draw_tile(t_game *game, char **map, int x, int y)
 
 	c = map[y][x];
 	if (c == '0')
-	{
-		display_tile(game, GROUND, x, y);
-		if (ft_randint(100) < GROUND_S)
-			display_tile(game, FLOWER, x, y);
-	}
+		draw_ground(game, x, y);
 	else if (c == '1')
 		display_tile(game, WALL, x, y);
 	else if (c == 'C')
-	{
-		display_tile(game, GROUND, x, y);
-		display_tile(game, COLLEC, x, y);
-	}
+		draw_collectible(game, x, y);
 	else if (c == 'E')
 		display_tile(game, EXIT, x, y);
 	else if (c == 'P')
+		draw_player_spawn(game, x, y);
+	else if (c == 'M')
 	{
 		display_tile(game, GROUND, x, y);
-		display_player(game, START, x, y);
+		display_player(game, MONSTER, x, y);
 	}
 	else
 		display_tile(game, GLICHT, x, y);

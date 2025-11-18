@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display_player.c                                   :+:      :+:    :+:   */
+/*   check_monster.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 16:28:16 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 16:28:18 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/12 11:31:12 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/18 16:29:14 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-mlx_image_t	*display_player(t_game *game, char *sprite, int x, int y)
+int	check_monster(t_game *game)
 {
-	mlx_image_t	*player_img;
+	int	x;
+	int	y;
 
-	player_img = display_tile(game, sprite, x, y);
-	if (!player_img)
+	x = game->player.x;
+	y = game->player.y;
+	if (game->grid[y][x] == 'M')
 	{
-		perror("\n Erreur : impossible d'afficher le joueur.\n \n");
-		return (NULL);
+		game->grid[y][x] = '0';
+		quit(game);
+		return (1);
 	}
-	return (player_img);
+	return (0);
 }

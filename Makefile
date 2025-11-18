@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/18 13:59:04 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/18 16:28:42 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 # **************************************************************************** #
@@ -49,6 +49,7 @@ SRC			= main.c \
 			  src/utils/check_collectible.c \
 			  src/utils/check_map_size.c \
 			  src/utils/dup_map.c \
+			  src/utils/check_monster.c \
 			  src/utils/check_exit.c \
 			  src/utils/print_move.c \
 			  src/parsing/check_map_valid.c \

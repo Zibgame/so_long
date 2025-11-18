@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 14:06:35 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:27:49 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define START "assets/textures/other/spwan.png"
 # define FLOWER "assets/textures/Flowers/grassandflowers1.png"
 # define SPRITE "assets/textures/player/idle/player_idle1.png"
+# define MONSTER "assets/textures/monster/idle/monster_idle1.png"
 
 # define KEY_ESC 65307
 # define KEY_W 119
@@ -103,6 +104,7 @@ t_player		create_player(t_game *game);
 mlx_image_t		*display_player(t_game *game, char *sprite, int x, int y);
 void			move_player(t_game *game, int mx, int my);
 int				check_collectible(t_game *game);
+int				check_monster(t_game *game);
 
 /* ================= RENDER ================= */
 void			draw_tile(t_game *game, char **map, int x, int y);
