@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 17:03:53 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 11:25:26 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static char	*read_content(int fd)
 	content = ft_strdup("");
 	if (!content)
 		return (NULL);
-	while ((bytes = read(fd, buffer, 1024)) > 0)
+	bytes = read(fd, buffer, 1024);
+	while (bytes > 0)
 	{
 		buffer[bytes] = '\0';
 		tmp = ft_strjoin(content, buffer);
@@ -30,6 +31,7 @@ static char	*read_content(int fd)
 			return (free(content), NULL);
 		free(content);
 		content = tmp;
+		bytes = read(fd, buffer, 1024);
 	}
 	if (!*content)
 		return (free(content), NULL);

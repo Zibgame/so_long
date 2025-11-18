@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 13:17:08 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 11:40:46 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 # define GAME_NAME "So Long"
 
 # define TILE_SIZE 42
-#define MAX_WIN_WIDTH 1920
-#define MAX_WIN_HEIGHT 1080
-#define MAX_TILES_X 44
-#define MAX_TILES_Y 24
+# define MAX_WIN_WIDTH 1920
+# define MAX_WIN_HEIGHT 1080
+# define MAX_TILES_X 44
+# define MAX_TILES_Y 24
 
 # define GROUND "assets/textures/Grass/Grass_23-42x42.png"
 # define GROUND_S 5
@@ -63,24 +63,23 @@ typedef struct s_player
 typedef struct s_game
 {
 	mlx_t		*mlx;
-	char			**grid;
-	char	*path;
+	char		**grid;
+	char		*path;
 	t_player	player;
-	int nbitem;
+	int			nbitem;
 }	t_game;
 
 /* ================= CORE ================= */
 int				main(int argc, char **argv);
-void start_game(t_game *game, char *map_path);
+void			start_game(t_game *game, char *map_path);
 void			quit(void *param);
-void	flood_fill(char **grid, int x, int y);
-void	free_map(char **map);
+void			flood_fill(char **grid, int x, int y);
+void			free_map(char **map);
 unsigned long	ft_cpu_cycles(void);
-int	ft_randint(int max);
-int	check_exit(t_game *game);
-void	free_map(char **map);
-char	**dup_map(char **src);
-int	check_path(char **grid);
+int				ft_randint(int max);
+int				check_exit(t_game *game);
+char			**dup_map(char **src);
+int				check_path(char **grid);
 
 /* ================= INPUT ================= */
 void			handle_key(mlx_key_data_t keydata, void *param);
@@ -90,28 +89,27 @@ int				check_arg(int argc, char *argv[]);
 int				check_ber(char *name);
 char			**get_map(char *path);
 int				*map_size(char **map);
-int	check_openable(char *map_path);
-int	check_top_bottom(char **grid);
-int	check_sides(char **grid);
-int	check_border(char **grid);
-int	check_map_valid(char *path);
-int get_nb_tile(char **grid,char c);
+int				check_openable(char *map_path);
+int				check_top_bottom(char **grid);
+int				check_sides(char **grid);
+int				check_border(char **grid);
+int				check_map_valid(char *path);
+int				get_nb_tile(char **grid, char c);
 
 /* ================= PLAYER ================= */
 t_pos			find_player(char **map);
 t_player		create_player(t_game *game);
 mlx_image_t		*display_player(t_game *game, char *sprite, int x, int y);
-void move_player(t_game *game, int mx, int my);
-int	check_collectible(t_game *game);
+void			move_player(t_game *game, int mx, int my);
+int				check_collectible(t_game *game);
 
 /* ================= RENDER ================= */
-void	draw_tile(t_game *game, char **map, int x, int y);
+void			draw_tile(t_game *game, char **map, int x, int y);
 int				render_map(t_game *game, char *map[]);
 mlx_image_t		*display_tile(t_game *game, char *path, int x, int y);
-void	update_tile(t_game *game, int x, int y);
+void			update_tile(t_game *game, int x, int y);
 
-/* == OTHER ==*/
-int	check_map_size(char **grid);
+/* == OTHER == */
+int				check_map_size(char **grid);
 
 #endif
-
