@@ -6,16 +6,16 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:00:47 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/06 09:52:43 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 11:13:56 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-mlx_image_t *display_tile(t_game *game,char *path, int x, int y)
+mlx_image_t	*display_tile(t_game *game, char *path, int x, int y)
 {
 	mlx_texture_t	*tex;
-	mlx_image_t *img;
+	mlx_image_t		*img;
 
 	tex = mlx_load_png(path);
 	if (!tex)

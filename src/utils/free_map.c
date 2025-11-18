@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:39:30 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/12 11:39:46 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/18 11:06:21 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_map(char **map)
 	int	i;
 
 	if (!map)
-		return;
+		return ;
 	i = 0;
 	while (map[i])
 		free(map[i++]);
