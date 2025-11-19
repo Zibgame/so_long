@@ -25,6 +25,8 @@ RM			= rm -f
 LIBFT_DIR	= library/libft
 GNL_DIR		= library/get_next_line
 MLX42_DIR	= library/mlx42
+PRINTF_DIR = library/ft_printf
+PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 # Fichiers librairies
 LIBFT		= $(LIBFT_DIR)/libft.a
@@ -76,9 +78,9 @@ MLX42_INC	= -I$(MLX42_DIR)/include
 #                                   COMMANDES                                  #
 # **************************************************************************** #
 
-$(NAME): $(LIBFT) $(GNL) $(MLX42_LIB) $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(GNL) $(MLX42_LIB) $(MLX42_FLAGS) -o $(NAME)
-	@echo "\033[32m✅ Compilation réussie : $(NAME)\033[0m"
+$(NAME): $(LIBFT) $(GNL) $(PRINTF) $(MLX42_LIB) $(OBJ)
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(GNL) $(PRINTF) $(MLX42_LIB) $(MLX42_FLAGS) -o $(NAME)
+	@echo "\033[32m✅ Compilation reussie : $(NAME)\033[0m"
 
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	@mkdir -p $(dir $@)
@@ -97,6 +99,9 @@ $(LIBFT):
 
 $(GNL):
 	@$(MAKE) -C $(GNL_DIR)
+
+$(PRINTF):
+	@$(MAKE) -C $(PRINTF_DIR)
 
 $(MLX42_LIB):
 	@cmake -S $(MLX42_DIR) -B $(MLX42_DIR)/build

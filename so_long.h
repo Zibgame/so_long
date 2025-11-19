@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/19 12:07:52 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/19 20:05:44 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@
 # include <fcntl.h>
 # include "library/libft/libft.h"
 # include "library/get_next_line/get_next_line.h"
+# include "library/ft_printf/ft_printf.h"
+
 # include "MLX42/MLX42.h"
+# include <stdio.h>
 
 # define GAME_NAME "So Long"
 
