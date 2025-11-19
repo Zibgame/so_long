@@ -20,7 +20,13 @@ int	main(int argc, char **argv)
 		return (1);
 	if (!check_map_valid(argv[1]))
 		return (1);
-	ft_printf("starting game...\n");
-	(void)game;
+	start_game(&game, argv[1]);
+	mlx_loop(game.mlx);
+	if (game.grid)
+		free_map(game.grid);
+	if (game.player.img)
+		mlx_delete_image(game.mlx, game.player.img);
+	if (game.mlx)
+		mlx_terminate(game.mlx);
 	return (0);
 }
