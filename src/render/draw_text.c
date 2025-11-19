@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 10:31:32 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/19 11:22:06 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/19 11:26:25 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	draw_move(t_game *game, int x, int y)
 {
 	char	*tmp;
-	char	str;
+	char	*str;
 
 	tmp = ft_itoa(game->player.move);
 	str = ft_strjoin("Moves: ", tmp);
