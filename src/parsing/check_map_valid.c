@@ -44,10 +44,34 @@ static int	check_path_validity(char **grid)
 	return (1);
 }
 
+int	check_file_valid(char *path)
+{
+	int		fd;
+	char	buf[1];
+	int		ret;
+
+	fd = open(path, O_RDONLY);
+	if (fd < 0)
+	{
+		ft_printf("Error\ncannot open map file\n");
+		return (0);
+	}
+	ret = read(fd, buf, 1);
+	close(fd);
+	if (ret == 0)
+	{
+		ft_printf("Error\nempty map file\n");
+		return (0);
+	}
+	return (1);
+}
+
 int	check_map_valid(char *path)
 {
 	char	**grid;
 
+	if (!check_file_valid(path))
+		return (0);
 	grid = get_map(path);
 	if (!grid)
 		return (0);

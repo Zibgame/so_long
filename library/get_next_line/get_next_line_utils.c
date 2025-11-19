@@ -37,8 +37,8 @@ char	*cft_strjoin(char *left_str, char *buff)
 	}
 	if (!left_str || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * ((cft_strlen(left_str) \
-					+ cft_strlen(buff)) + 1));
+	str = malloc(sizeof(char) * (cft_strlen(left_str)
+		+ cft_strlen(buff) + 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
