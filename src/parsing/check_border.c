@@ -56,13 +56,13 @@ int	check_border(char **grid)
 {
 	if (!check_top_bottom(grid))
 	{
-		ft_putendl_fd("Error\nMap border is open (top or bottom)", 2);
-		return (0);
+		ft_printf("Error\nmap must be surrounded by walls\n");
+		exit(EXIT_FAILURE);
 	}
 	if (!check_sides(grid))
 	{
-		ft_putendl_fd("Error\nMap border is open (left or right)", 2);
-		return (0);
+		ft_printf("Error\nmap must be surrounded by walls\n");
+		exit(EXIT_FAILURE);
 	}
 	return (1);
 }

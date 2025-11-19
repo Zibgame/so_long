@@ -48,6 +48,8 @@ void	update_player_sprite(t_game *game, int mx, int my)
 	else
 		sprite = SPRITE_DOWN;
 	mlx_delete_image(game->mlx, game->player.img);
-	game->player.img = display_player(game, sprite, game->player.x, \
-		game->player.y);
+	game->player.img = display_player(game,
+			sprite,
+			game->player.x,
+			game->player.y);
 }
