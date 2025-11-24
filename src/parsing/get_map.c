@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:13:38 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 11:25:26 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/24 12:58:36 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ static char	*read_content(int fd)
 
 char	**get_map(char *path)
 {
-	int		fd;
-	char	*content;
-	char	**map;
+	int			fd;
+	char		*content;
+	char		**map;
 
 	fd = check_openable(path);
 	if (fd <= 0)
@@ -51,6 +51,11 @@ char	**get_map(char *path)
 	close(fd);
 	if (!content)
 		return (NULL);
+	if (ft_strnstr(content, "\n\n", ft_strlen(content)))
+	{
+		printf("Error \nmap avec un trou\n");
+		return (free(content), NULL);
+	}
 	map = ft_split(content, '\n');
 	free(content);
 	return (map);
