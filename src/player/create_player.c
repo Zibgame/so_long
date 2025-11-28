@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 10:27:07 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 11:27:46 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:54:33 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_player	create_player(t_game *game)
 	player.y = find_pos.y;
 	player.bin = 0;
 	player.move = 0;
-	find_img = display_player(game, SPRITE, player.x, player.y);
+	find_img = display_player(game, SPRITE_RIGHT_1, player.x, player.y);
 	player.img = find_img;
 	return (player);
 }
