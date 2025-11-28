@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:01:08 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/19 12:06:10 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 11:43:05 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,31 @@ void	move_player(t_game *game, int mx, int my)
 	return ;
 }
 
+static char	*draw_right(t_game *game)
+{
+	char	*sprite;
+
+	if (game->player.bin == 0)
+	{
+		game->player.bin = 1;
+		sprite = SPRITE_RIGHT_1;
+	}
+	else
+	{
+		game->player.bin = 0;
+		sprite = SPRITE_RIGHT_2;
+	}
+	return (sprite);
+}
+
 void	update_player_sprite(t_game *game, int mx, int my)
 {
 	char	*sprite;
 
 	if (mx == 1)
-		sprite = SPRITE_RIGHT;
+	{
+		sprite = draw_right(game);
+	}
 	else if (mx == -1)
 		sprite = SPRITE_LEFT;
 	else if (my == -1)

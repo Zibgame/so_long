@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 10:54:28 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 11:44:58 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@
 # define SPRITE "assets/textures/player/idle/player_idle1.png"
 # define SPRITE_DOWN "assets/textures/player/idle/player_idle2.png"
 # define SPRITE_LEFT "assets/textures/player/idle/player_idle3.png"
-# define SPRITE_RIGHT "assets/textures/player/idle/player_idle4.png"
+# define SPRITE_RIGHT_1 "assets/textures/player/idle/player_idle4.png"
+# define SPRITE_RIGHT_2 "assets/textures/player/idle/player_idle4_2.png"
 
 # define KEY_ESC 65307
 # define KEY_W 119
@@ -67,6 +68,7 @@ typedef struct s_player
 	mlx_image_t	*img;
 	int			item;
 	int			move;
+	int			bin;
 }	t_player;
 
 typedef struct s_game
