@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/19 20:05:44 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 10:54:28 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@
 # define MAX_TILES_X 44
 # define MAX_TILES_Y 24
 
-# define GROUND "assets/textures/Grass/Grass_23-42x42.png"
+# define GROUND "assets/textures/Grass/Grass01.png"
 # define GROUND_S 5
-# define WALL "assets/textures/Bricks/Bricks_16-42x42.png"
+# define WALL "assets/textures/Bricks/Bricks_17-42x42.png"
 # define GLICHT "assets/textures/other/glicht.png"
 # define COLLEC "assets/textures/food/Peach.png"
 # define EXIT "assets/textures/other/END.png"
 # define START "assets/textures/other/spwan.png"
-# define FLOWER "assets/textures/Flowers/grassandflowers1.png"
+# define FLOWER "assets/textures/Flowers/flower.png"
 # define MONSTER "assets/textures/monster/idle/monster_idle1.png"
 # define SPRITE_UP "assets/textures/player/idle/player_idle1.png"
 # define SPRITE "assets/textures/player/idle/player_idle1.png"

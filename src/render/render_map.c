@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 16:33:31 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 10:45:36 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	draw_collectible(t_game *game, int x, int y)
 static void	draw_player_spawn(t_game *game, int x, int y)
 {
 	display_tile(game, GROUND, x, y);
-	display_player(game, START, x, y);
 }
 
 void	draw_tile(t_game *game, char **map, int x, int y)
