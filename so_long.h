@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 12:23:57 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 13:19:53 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 # define EXIT "assets/textures/other/END.png"
 # define START "assets/textures/other/spwan.png"
 # define FLOWER "assets/textures/Flowers/flower.png"
-# define MONSTER "assets/textures/monster/idle/monster_idle1.png"
+# define MONSTER "assets/textures/monster/idle/0.png"
 # define SPRITE_UP "assets/textures/player/idle/player_idle1.png"
 # define SPRITE "assets/textures/player/idle/player_idle1.png"
 # define SPRITE_DOWN "assets/textures/player/idle/player_idle2.png"
