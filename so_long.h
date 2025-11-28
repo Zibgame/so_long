@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 13:50:54 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:08:34 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,6 @@ void			draw_move(t_game *game, int x, int y);
 int				check_map_size(char **grid);
 void			game_over(t_game *game);
 void			game_win(t_game *game);
+void			clear(void);
 
 #endif
