@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/28 13:47:39 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/28 14:47:36 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRC         = main.c \
               src/parsing/check_map_valid.c \
               src/render/display_player.c \
               src/render/update_tile.c \
+              src/render/render_monster.c \
               src/render/draw_text.c \
               src/player/create_player.c \
               src/player/find_player.c \

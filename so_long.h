@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 16:31:53 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 14:08:34 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:46:50 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 # define EXIT "assets/textures/other/END.png"
 # define START "assets/textures/other/spwan.png"
 # define FLOWER "assets/textures/Flowers/flower.png"
-# define MONSTER "assets/textures/monster/idle/0.png"
+# define MONSTER "assets/textures/monster/idle/"
 # define SPRITE_UP "assets/textures/player/idle/player_idle1.png"
 # define SPRITE "assets/textures/player/idle/player_idle1.png"
 # define SPRITE_DOWN "assets/textures/player/idle/player_idle2.png"
@@ -125,6 +125,7 @@ mlx_image_t		*display_tile(t_game *game, char *path, int x, int y);
 void			update_tile(t_game *game, int x, int y);
 void			print_move(t_player player);
 void			draw_move(t_game *game, int x, int y);
+void			draw_monster(t_game *game, int x, int y);
 
 /* == OTHER == */
 int				check_map_size(char **grid);
