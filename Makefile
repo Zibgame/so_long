@@ -6,7 +6,7 @@
 #    By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 15:50:12 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/19 10:32:45 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/28 13:47:39 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC         = main.c \
               src/utils/dup_map.c \
               src/utils/check_monster.c \
               src/utils/check_exit.c \
+              src/utils/end_game.c \
               src/utils/print_move.c \
               src/parsing/check_map_valid.c \
               src/render/display_player.c \

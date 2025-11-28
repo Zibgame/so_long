@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:31:12 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/18 11:07:51 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:01:16 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	check_exit(t_game *game)
 		if (game->nbitem == 0)
 		{
 			game->grid[y][x] = '0';
+			game_win(game);
 			quit(game);
 		}
 		return (1);
