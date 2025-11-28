@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 01:06:37 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/13 07:55:30 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:31:31 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -38,7 +38,8 @@ static int	check_path_validity(char **grid)
 {
 	if (!check_path(grid))
 	{
-		ft_printf("Error\nCant Open the map\n");
+		ft_printf("Error\nFile cant be open or player cant acc\
+				es to a main object\n");
 		return (0);
 	}
 	return (1);

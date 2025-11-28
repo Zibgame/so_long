@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 12:52:20 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 14:46:02 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ void	draw_tile(t_game *game, char **map, int x, int y)
 		draw_player_spawn(game, x, y);
 	else if (c == 'M')
 	{
-		display_tile(game, GROUND, x, y);
-		display_player(game, MONSTER, x, y);
+		draw_monster(game, x, y);
 	}
 	else
 		display_tile(game, GLICHT, x, y);
