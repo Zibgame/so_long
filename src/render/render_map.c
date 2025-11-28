@@ -6,7 +6,7 @@
 /*   By: zcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:44:22 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 10:45:36 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:52:20 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,24 @@ static void	draw_ground(t_game *game, int x, int y)
 
 static void	draw_collectible(t_game *game, int x, int y)
 {
+	char	*collec;
+	char	*tmp;
+	char	*path;
+
+	path = ft_itoa(ft_randint(3));
+	if (!path)
+		return ;
+	tmp = ft_strjoin(path, ".png");
+	free(path);
+	if (!tmp)
+		return ;
+	collec = ft_strjoin(COLLEC, tmp);
+	free(tmp);
+	if (!collec)
+		return ;
 	display_tile(game, GROUND, x, y);
-	display_tile(game, COLLEC, x, y);
+	display_tile(game, collec, x, y);
+	free(collec);
 }
 
 static void	draw_player_spawn(t_game *game, int x, int y)
